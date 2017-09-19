@@ -43,7 +43,7 @@ public class MyWorld extends World
         addObject(img1, getWidth()/2, - 5519);
 
         //adds player1 in bottom middel of map.
-        addObject(new player1(), getWidth()/2, getHeight()-50);
+        addObject(new Player(), getWidth()/2, getHeight()-50);
 
         Enemy enemy = new Enemy();
         addObject(enemy,Greenfoot.getRandomNumber(getWidth()),getHeight());
