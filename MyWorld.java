@@ -15,7 +15,6 @@ public class MyWorld extends World
     //Speed of map scroll and aiplanes 
     public static int speed = 5;
 
-
     /**
      * Constructor for objects of class MyWorld.
      */
@@ -46,25 +45,7 @@ public class MyWorld extends World
         addObject(new Player(), getWidth()/2, getHeight()-50);
 
         Enemy enemy = new Enemy();
-        addObject(enemy,Greenfoot.getRandomNumber(getWidth()),getHeight());
-        Enemy enemy2 = new Enemy();
-        addObject(enemy2,247,208);
-        Enemy enemy3 = new Enemy();
-        addObject(enemy3,379,143);
-        enemy.setLocation(105,800);
-        enemy.setLocation(112,34);
-        enemy.setLocation(92,91);
-        enemy3.setLocation(453,88);
-        enemy.setLocation(65,83);
-        enemy2.setLocation(270,201);
-        Enemy enemy4 = new Enemy();
-        addObject(enemy4,160,232);
-        Enemy enemy5 = new Enemy();
-        addObject(enemy5,421,237);
-        enemy.setLocation(62,67);
-        enemy4.setLocation(152,148);
-        enemy3.setLocation(468,60);
-        enemy5.setLocation(400,161);
+        addObject(enemy,getWidth() / Greenfoot.getRandomNumber(10),50);
     }
 
     public void display()
@@ -72,7 +53,7 @@ public class MyWorld extends World
         showText("Health = " + "Full", getWidth()-100, getHeight()-20);
         showText("Fuel = " + "Full", getWidth()-468, getHeight()-20);
     }
-    
+
     public void act()
     {
         //Scrolls map
@@ -81,5 +62,4 @@ public class MyWorld extends World
         counter++;
     }
 
-    
 }
