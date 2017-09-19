@@ -24,7 +24,7 @@ public class MyWorld extends World
         super(528, 800, 1, false); 
         prepare();
         counter = 0;
-        setPaintOrder(Airplane.class, Projectile.class);
+        setPaintOrder(Airplane.class, Projectile.class, Enemy.class); 
         display();
     }
 
@@ -45,7 +45,13 @@ public class MyWorld extends World
         addObject(new Player(), getWidth()/2, getHeight()-50);
 
         Enemy enemy = new Enemy();
-        addObject(enemy,getWidth() / Greenfoot.getRandomNumber(10),50);
+        addObject(enemy,Greenfoot.getRandomNumber(getWidth()),Greenfoot.getRandomNumber(getHeight()));
+        Enemy enemy2 = new Enemy();
+        addObject(enemy2,Greenfoot.getRandomNumber(getWidth()),Greenfoot.getRandomNumber(getHeight()));
+        Enemy enemy3 = new Enemy();
+        addObject(enemy3,Greenfoot.getRandomNumber(getWidth()),Greenfoot.getRandomNumber(getHeight()));
+        Enemy enemy4 = new Enemy();
+        addObject(enemy4,Greenfoot.getRandomNumber(getWidth()),Greenfoot.getRandomNumber(getHeight()));
     }
 
     public void display()
