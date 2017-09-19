@@ -75,10 +75,10 @@ public class Enemy extends Airplane
      */
     public void enemyMovement()
     {
-        setLocation(getX(),getY()+5);
+        setLocation((double)getX()+ (double)Greenfoot.getRandomNumber(4)- 2,(double)getY()+5);
         if(isAtEdge())
         {
-            setLocation(getX(),0);
+            setLocation((double)getX(),0);
         }
 
     }
