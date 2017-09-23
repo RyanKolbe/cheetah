@@ -20,7 +20,7 @@ public class Enemy extends Airplane
     /**
      * Sets scale of image.
      */
-    private static int imgX = 120;
+    private static int imgX = 115;
     private static int imgY = imgX;
 
     /**
@@ -44,8 +44,9 @@ public class Enemy extends Airplane
         animationCounter();
         animatePropeller();
         enemyMovement();
-        fireWeapon();
-    }  
+        enemyWeapon();
+        destroyEnemies();
+    }
 
     /**
      * animationCounter - used to control the animations.
@@ -55,17 +56,16 @@ public class Enemy extends Airplane
         aCounter++;
         if(aCounter == img.length)
             aCounter = 0;
-
     }
 
     /**
      * Fires machine gun.
      */
-    private void fireWeapon()
+    private void enemyWeapon()
     {
         if(Greenfoot.getRandomNumber(100)>95)
         {
-            fireMachinegun(90);
+            enemyMachineGun(90);
         }
     }
 
@@ -79,7 +79,6 @@ public class Enemy extends Airplane
         {
             setLocation(Greenfoot.getRandomNumber(getWorld().getWidth()),0);
         }
-
     }
 
     /**
@@ -91,8 +90,17 @@ public class Enemy extends Airplane
         {
             if(aCounter == z)
                 setImage(img[z]);
-
             getImage().scale(imgX, imgY);
+        }
+    }
+
+    public void destroyEnemies()
+    {
+        Actor Projectile = getOneIntersectingObject(Projectile.class);
+        if (Projectile != null)
+        {
+            removeTouching(Projectile.class);
+            setLocation( 50 + Greenfoot.getRandomNumber(400),10);
         }
     }
 }
