@@ -8,12 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Projectile extends Actor
 {
-    //projectile damage
-    public static int damage = 5;
-
-    //projectile speed
-    public static int speed = 15;
-
+    public static int damage = 5; //projectile damage
+    public static int speed = 15; //projectile speed
+    
     /**
      * Projectile constructer
      * Para: #inRotation
@@ -26,12 +23,12 @@ public class Projectile extends Actor
         move(5);
         Greenfoot.playSound("gunShot.wav");
     }
-    
-     public Projectile(int inRotation)
+
+    public Projectile(int inRotation)
     {       
         setRotation(inRotation);
         GreenfootImage img = getImage();
-        img.scale(20,20);
+        img.scale(15,15);
         move(5);
         Greenfoot.playSound("gunShot.wav");
     }
@@ -48,5 +45,5 @@ public class Projectile extends Actor
         {
             getWorld().removeObject(this);
         }
-    }    
+    }  
 }
