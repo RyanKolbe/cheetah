@@ -11,10 +11,8 @@ public class MyWorld extends World
     //
     private Background img0, img1;
     private int counter;
-
-    //Speed of map scroll and aiplanes 
-    public static int speed = 5;
-
+    public static int speed = 5;    //Speed of map scroll and aiplanes 
+    public int enemyCounter = 0;
     /**
      * Constructor for objects of class MyWorld.
      */
@@ -24,7 +22,7 @@ public class MyWorld extends World
         super(528, 800, 1, false); 
         prepare();
         counter = 0;
-        setPaintOrder(Airplane.class, Projectile.class, Enemy.class); 
+        setPaintOrder(Airplane.class, Enemy.class,Projectile.class); 
         display();
     }
 
@@ -41,17 +39,14 @@ public class MyWorld extends World
         img1 = new Background();
         addObject(img1, getWidth()/2, - 5519);
 
-        //adds player1 in bottom middel of map.
+        //adds player1 in bottom middle of map.
         addObject(new Player(), getWidth()/2, getHeight()-50);
 
-        Enemy enemy = new Enemy();
-        addObject(enemy,Greenfoot.getRandomNumber(getWidth()),Greenfoot.getRandomNumber(getHeight()));
-        Enemy enemy2 = new Enemy();
-        addObject(enemy2,Greenfoot.getRandomNumber(getWidth()),Greenfoot.getRandomNumber(getHeight()));
-        Enemy enemy3 = new Enemy();
-        addObject(enemy3,Greenfoot.getRandomNumber(getWidth()),Greenfoot.getRandomNumber(getHeight()));
-        Enemy enemy4 = new Enemy();
-        addObject(enemy4,Greenfoot.getRandomNumber(getWidth()),Greenfoot.getRandomNumber(getHeight()));
+        for( int i = 0; i < 4; i++)
+        {
+            addObject(new Enemy(), 50 + Greenfoot.getRandomNumber(400),
+                50 + Greenfoot.getRandomNumber(100));     
+        }
     }
 
     public void display()
