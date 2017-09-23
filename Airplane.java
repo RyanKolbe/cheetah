@@ -78,4 +78,10 @@ public class Airplane extends Actor
         Projectile bullet = new Projectile(inRotation);
         getWorld().addObject(bullet, getX(), getY());
     }
+
+    public void enemyMachineGun(int inRotation)
+    {
+        EnemyProjectile bullet = new EnemyProjectile(inRotation);
+        getWorld().addObject(bullet, getX(), getY());
+    }
 }
