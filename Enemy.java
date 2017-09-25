@@ -100,7 +100,7 @@ public class Enemy extends Airplane
         if (Projectile != null)
         {
             removeTouching(Projectile.class);
-            setLocation( 50 + Greenfoot.getRandomNumber(400),10);
+            setLocation( 50 + Greenfoot.getRandomNumber(400),- 200);
         }
     }
 }
